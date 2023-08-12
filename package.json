@@ -12,7 +12,7 @@
   },
   "homepage": "https://github.com/Limonische/vue3-transition-expand.git",
   "license": "ISC",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "vue",
     "nuxt",
@@ -35,7 +35,8 @@
   "exports": {
     ".": {
       "import": "./dist/vue3-transition-expand.js",
-      "require": "./dist/vue3-transition-expand.umd.cjs"
+      "require": "./dist/vue3-transition-expand.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./dist/style.css": "./dist/style.css"
   },
