@@ -17,6 +17,11 @@ const property = computed(() => (props.direction === 'vertical' ? 'height' : 'wi
 const inverseProperty = computed(() => (props.direction !== 'vertical' ? 'height' : 'width'))
 const durationInMs = computed(() => `${props.duration}ms`)
 
+const transitionProps = computed(() => ({
+  name: `expand--${props.direction}`,
+  ...(props.tag && { tag: props.tag })
+}))
+
 const enter = (element: HTMLElement) => {
   element.style.transition = 'none'
 
@@ -63,8 +68,7 @@ const after = (element: HTMLElement) => {
 <template>
   <Component
     :is="component"
-    :tag="tag"
-    :name="`expand--${direction}`"
+    v-bind="transitionProps"
     @enter="enter"
     @after-enter="after"
     @leave="leave"
