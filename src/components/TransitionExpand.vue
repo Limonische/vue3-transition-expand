@@ -2,13 +2,12 @@
 import { computed, Transition, TransitionGroup } from 'vue'
 
 export interface TransitionExpandProps {
-  tag?: keyof HTMLElementTagNameMap | null
+  tag?: keyof HTMLElementTagNameMap
   direction?: 'vertical' | 'horizontal'
   duration?: number
 }
 
 const props = withDefaults(defineProps<TransitionExpandProps>(), {
-  tag: null,
   direction: 'vertical',
   duration: 300
 })
